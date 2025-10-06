@@ -99,15 +99,15 @@ const ProductCard = ({ product, showQuickAdd = false }) => {
 
           <div className="flex items-center justify-between">
             <p className="text-sm font-medium text-gray-900">
-              £{product.price}
+              Rp {product.price.toLocaleString('id-ID')}
             </p>
             
-            {/* Free shipping indicator */}
+            {/* Free shipping indicator
             {product.price >= 70 ? (
               <span className="text-xs text-green-600">Free Shipping</span>
             ) : (
               <span className="text-xs text-gray-500">Free Shipping Available*</span>
-            )}
+            )} */}
           </div>
         </div>
       </Link>

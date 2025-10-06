@@ -9,6 +9,7 @@ const Header = () => {
   const navigation = [
     { name: 'MEN', href: '/mens' },
     { name: 'WOMEN', href: '/womens' },
+    { name: 'ACCESSORIES', href: '/accessories' },
     { name: 'LOOKBOOK', href: '/lookbook' },
     { name: 'PROVISIONS', href: '/provisions' },
     { name: 'ABOUT', href: '/about' }
@@ -31,7 +32,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="text-2xl font-bold text-gray-900 tracking-tight">
-              P&Co
+              <img src="/images/logo/logo.png" alt="Logo Intens.id" width="50%" />
             </Link>
           </div>
 

@@ -120,10 +120,10 @@ const ProductDetailPage = () => {
                   />
                 </button>
               </div>
-              <p className="text-2xl font-semibold text-gray-900">£{product.price}</p>
-              {product.price >= 70 && (
+              <p className="text-2xl font-semibold text-gray-900">Rp {product.price.toLocaleString('id-ID')}</p>
+              {/* {product.price >= 70 && (
                 <p className="text-sm text-green-600 mt-1">This Item Qualifies For Free Shipping</p>
-              )}
+              )} */}
             </div>
 
             {/* Color Selection */}
@@ -168,30 +168,6 @@ const ProductDetailPage = () => {
                       }`}
                     >
                       {size}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Length Selection */}
-            {product.lengths && product.lengths.length > 0 && (
-              <div>
-                <h3 className="text-sm font-medium text-gray-900 mb-3">
-                  Length: {selectedLength && <span className="text-gray-600">{selectedLength}</span>}
-                </h3>
-                <div className="flex gap-2">
-                  {product.lengths.map(length => (
-                    <button
-                      key={length}
-                      onClick={() => setSelectedLength(length)}
-                      className={`px-4 py-2 border text-sm font-medium transition-colors ${
-                        selectedLength === length
-                          ? 'border-gray-900 bg-gray-900 text-white'
-                          : 'border-gray-300 text-gray-900 hover:border-gray-900'
-                      }`}
-                    >
-                      {length}
                     </button>
                   ))}
                 </div>
@@ -248,13 +224,13 @@ const ProductDetailPage = () => {
                 )}
               </div>
 
-              {/* Materials & Care */}
+              {/* Materials */}
               <div>
                 <button
                   onClick={() => setShowMaterials(!showMaterials)}
                   className="flex items-center justify-between w-full text-left"
                 >
-                  <span className="text-sm font-medium text-gray-900">Materials & Care</span>
+                  <span className="text-sm font-medium text-gray-900">Materials</span>
                   <ChevronDown 
                     size={16} 
                     className={`transform transition-transform ${showMaterials ? 'rotate-180' : ''}`} 
@@ -263,7 +239,6 @@ const ProductDetailPage = () => {
                 {showMaterials && (
                   <div className="mt-3 text-sm text-gray-600 space-y-2">
                     <p><strong>Materials:</strong> {product.materials}</p>
-                    <p><strong>Care:</strong> {product.care}</p>
                   </div>
                 )}
               </div>
@@ -282,7 +257,7 @@ const ProductDetailPage = () => {
                 </button>
                 {showSizeGuide && (
                   <div className="mt-3 text-sm text-gray-600">
-                    <p>Please refer to our size guide for accurate measurements and fit information.</p>
+                    <p><strong>Size:</strong> {product.size}</p>
                   </div>
                 )}
               </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Instagram, Facebook, Youtube } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -63,11 +64,6 @@ const Footer = () => {
                   Accessories
                 </Link>
               </li>
-              <li>
-                <Link to="/new-arrivals" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  New Arrivals
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -78,28 +74,23 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/faq" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                <Link to="https://api.whatsapp.com/send/?phone=6281222788133&text&type=phone_number&app_absent=0" target="_blank" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                <Link to="https://api.whatsapp.com/send/?phone=6281222788133&text&type=phone_number&app_absent=0" target="_blank" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link to="/shipping" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                <Link to="/shipping & return" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                   Shipping & Returns
-                </Link>
-              </li>
-              <li>
-                <Link to="/size-guide" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Size Guide
                 </Link>
               </li>
             </ul>
           </div>
-
+          
           {/* Company */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wide">
@@ -111,21 +102,6 @@ const Footer = () => {
                   About
                 </Link>
               </li>
-              <li>
-                <Link to="/careers" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="/press" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Press
-                </Link>
-              </li>
-              <li>
-                <Link to="/sustainability" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                  Sustainability
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
@@ -133,21 +109,21 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
           <div className="flex space-x-6 mb-4 md:mb-0">
-            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="https://api.whatsapp.com/send/?phone=6281222788133&text&type=phone_number&app_absent=0" target="_blank" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <FaWhatsapp size={20} />
+            </a>
+            <a href="https://www.instagram.com/intens.id?igsh=MWR0bzBnZHZjaXc4bg%3D%3D" target="_blank" className="text-gray-600 hover:text-gray-900 transition-colors">
               <Instagram size={20} />
             </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="https://www.facebook.com/share/16nz56moGv/" target="_blank" className="text-gray-600 hover:text-gray-900 transition-colors">
               <Facebook size={20} />
             </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-              <Twitter size={20} />
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="https://www.youtube.com/@intensleather" target="_blank" className="text-gray-600 hover:text-gray-900 transition-colors">
               <Youtube size={20} />
             </a>
           </div>
           <p className="text-sm text-gray-600">
-            © 2025 P&Co. All rights reserved.
+            © 2025 Intens.id. All rights reserved.
           </p>
         </div>
       </div>

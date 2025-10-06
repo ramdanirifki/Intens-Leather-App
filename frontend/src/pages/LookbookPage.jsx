@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { lookbookImages } from '../data/mockData';
+import React, { useState } from "react";
+import { lookbookImages } from "../data/mockData";
+import { useNavigate } from "react-router-dom";
 
 const LookbookPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -12,6 +13,8 @@ const LookbookPage = () => {
     setSelectedImage(null);
   };
 
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -21,8 +24,9 @@ const LookbookPage = () => {
             Lookbook
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our seasonal collections through curated lifestyle photography 
-            and styling inspiration that embodies our mindset for purposeful living.
+            Explore our seasonal collections through curated lifestyle
+            photography and styling inspiration that embodies our mindset for
+            purposeful living.
           </p>
         </div>
       </section>
@@ -33,7 +37,7 @@ const LookbookPage = () => {
           {/* Masonry-style Grid */}
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
             {lookbookImages.map((image, index) => (
-              <div 
+              <div
                 key={image.id}
                 className="break-inside-avoid group cursor-pointer"
                 onClick={() => openModal(image)}
@@ -44,10 +48,15 @@ const LookbookPage = () => {
                     alt={image.title}
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                     style={{
-                      aspectRatio: index % 3 === 0 ? '3/4' : index % 3 === 1 ? '4/5' : '2/3'
+                      aspectRatio:
+                        index % 3 === 0
+                          ? "3/4"
+                          : index % 3 === 1
+                          ? "4/5"
+                          : "2/3",
                     }}
                   />
-                  
+
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end p-6 opacity-0 group-hover:opacity-100">
                     <div className="text-white">
@@ -85,66 +94,74 @@ const LookbookPage = () => {
         </div>
       )}
 
-      {/* Lookbook Articles Section */}
+      {/* Behind The Scenes Section */}
       <section className="bg-gray-50 py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Latest Stories</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Featured Article */}
-            <div className="lg:col-span-2">
-              <div className="relative overflow-hidden bg-gray-100 aspect-[16/9] mb-6">
-                <img
-                  src="https://images.unsplash.com/photo-1731589802956-b4693dae884b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxmYXNoaW9uJTIwcGhvdG9ncmFwaHl8ZW58MHx8fHwxNzU5NDQ3OTE5fDA&ixlib=rb-4.1.0&q=85"
-                  alt="Autumn Additions"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Autumn Additions</h3>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                The story continues. Take a closer look. This next release dives deeper into heritage textures 
-                and city styling, from our long-awaited brushed knit scarf, versatile cotton layering pieces, 
-                and pin-stripe patterns designed for everyday styling.
-              </p>
-              <button className="text-gray-900 font-medium hover:text-gray-600 transition-colors">
-                Read More →
-              </button>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Behind The Scenes
+          </h2>
+
+          <div className="bg-white p-8 shadow-sm">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                The Intens.id Workshop
+              </h3>
             </div>
 
-            {/* Side Articles */}
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-600">
               <div>
-                <div className="relative overflow-hidden bg-gray-100 aspect-[4/3] mb-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1758740358292-29cbc4d3a707?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxydWdnZWQlMjBjbG90aGluZ3xlbnwwfHx8fDE3NTk1NjE2OTB8MA&ixlib=rb-4.1.0&q=85"
-                    alt="Autumn Vol. 2"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Autumn Vol. 2</h4>
-                <p className="text-sm text-gray-600 mb-3">
-                  From New York streets to UK heritage - our next collection threads tradition through modern city style.
+                <h4 className="font-semibold text-gray-900 mb-3">
+                  Our Philosophy
+                </h4>
+                <p className="mb-6 leading-relaxed">
+                  Every piece we create starts with a vision of timeless
+                  elegance and ends with the skilled hands of our artisans in
+                  Garut. We believe in creating heirlooms, not just products.
                 </p>
-                <button className="text-gray-900 text-sm font-medium hover:text-gray-600 transition-colors">
-                  Read More →
-                </button>
+
+                <h4 className="font-semibold text-gray-900 mb-3">
+                  The Process
+                </h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Material selection from premium sources
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Hand-cutting with precision tools
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Traditional stitching techniques
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full mr-3"></span>
+                    Quality inspection & finishing
+                  </li>
+                </ul>
               </div>
 
               <div>
-                <div className="relative overflow-hidden bg-gray-100 aspect-[4/3] mb-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1759405185685-c6009021adec?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxydWdnZWQlMjBjbG90aGluZ3xlbnwwfHx8fDE3NTk1NjE2OTB8MA&ixlib=rb-4.1.0&q=85"
-                    alt="Grit & Glory"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Grit & Glory</h4>
-                <p className="text-sm text-gray-600 mb-3">
-                  As summer fades, we let our minds wander to autumnal afternoons and the golden haze of the season.
+                <h4 className="font-semibold text-gray-900 mb-3">
+                  Our Commitment
+                </h4>
+                <p className="mb-6 leading-relaxed">
+                  We're dedicated to preserving Indonesian leathercraft heritage
+                  while embracing innovation. Each product carries the spirit of
+                  #kulitkanindonesia.
                 </p>
-                <button className="text-gray-900 text-sm font-medium hover:text-gray-600 transition-colors">
-                  Read More →
-                </button>
+
+                <div className="bg-gray-100 p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    Did You Know?
+                  </h4>
+                  <p className="text-sm">
+                    It takes an average of 18 hours of skilled craftsmanship to
+                    create a single Intens.id leather jacket, with over 5,000
+                    precise stitches.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -155,18 +172,19 @@ const LookbookPage = () => {
       <section className="py-24 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 tracking-tight">
-            Be Part of the Story
+            Join Our Craftsmanship Journey
           </h2>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Share your P&Co moments and styling inspiration with our community. 
-            Tag us to be featured in our next lookbook.
+            Share your Intens.id moments and leather styling inspiration with
+            our community. Tag us to be featured in our next lookbook and become
+            part of the #kulitkanindonesia story.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gray-900 text-white px-8 py-3 text-lg font-medium hover:bg-gray-800 transition-colors">
-              Shop the Look
-            </button>
-            <button className="border border-gray-900 text-gray-900 px-8 py-3 text-lg font-medium hover:bg-gray-900 hover:text-white transition-colors">
-              Follow @pandco
+            <button
+              onClick={() => navigate("/mens")}
+              className="bg-gray-900 text-white px-8 py-3 text-lg font-medium hover:bg-gray-800 transition-colors"
+            >
+              Discover Collection
             </button>
           </div>
         </div>
