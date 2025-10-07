@@ -27,7 +27,6 @@ const App = () => {
             <Route path="/product/:id" element={<ProductDetailPage />} />
             <Route path="/lookbook" element={<LookbookPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/signup" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-2xl">Signup Page</h1></div>} />
           </Routes>
         </main>
         <Footer />
