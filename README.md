@@ -1,4 +1,4 @@
-# Instructions to Run P&Co Website in Visual Studio Code
+# Instructions to Run Intens.id Website in Visual Studio Code
 
 ## Prerequisites
 Make sure you have these installed:
@@ -197,5 +197,3 @@ npx serve -s build
 The build folder will contain the optimized static files ready for deployment.
 
 ---
-
-**🎉 You're all set!** The P&Co website clone should now be running locally in VS Code with full functionality including homepage, product pages, category filtering, and lookbook sections.
